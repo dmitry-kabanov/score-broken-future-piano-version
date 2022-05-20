@@ -1,7 +1,7 @@
 \version "2.22.2"
 
 \header {
-  title = "I need a title herre"
+  title = "Broken Future"
   composer = "Dmitry I. Kabanov"
   tagline = \markup {
     Engraved at
@@ -16,53 +16,66 @@ upper = \relative c' {
   \clef treble
   \key a \minor
   \time 4/4
+  \tempo "Moderato" 4 = 94
   
   r1 |
+  r2 r4 e8( a |
   \repeat volta 2 {
-  r2 r4 e8 a |
   b2. c4 |
-  a2 r4 e8 a |
+  a2) r4 e8( a |
   b2. e4 |
-  c2 r4 e4 |
-  b2 r4 r8 c8 |}
-  \alternative {
-  { a2 r2 | }
-  { a2 r4. g8 | }
+  c2) r4 e4( |
+  b2) r4 r8 c8( |
   }
-  b2 r2 |
+  \alternative {
+  { a2) r2 |
+    r2 r4 \slurUp e8( a) |
+  }
+  { a2\repeatTie r4. g8( |
+    b2) r2 |
+  }
+  }
   
   % Part B
-  e8 a, c e f d e c |
-  e8 a, c e f d e c |
-  g' e  f d e c d b |
-  g' b, f' b, e b d4 |
+  e8( a, c e f d e c) |
+  e8( a, c e f d e c) |
+  g'( e  f d e c d b) |
+  g'( b, f' b, e b d4) |
   
-  e8 a, c e f d e c |
-  e8 a, c e f d e c |
-  g' e  f d e c d b |
-  e gis, d' gis, c gis b4 |
+  e8( a, c e f d e c) |
+  e8( a, c e f d e c) |
+  g'( e  f d e c d b) |
+  e( gis, d' gis, c gis b4) |
   
-  a8 e a b c a b gis |
-  a f a b c a b gis |
-  a f a b c a b gis |
-  a f e d c b a gis |
+  a8( e a b c a b gis) |
+  a( f a b c a b gis) |
+  a( f a b c a b gis |
+  a f e d c b a gis) |
   
-  a' e a b c a b gis |
-  a f a b c a b gis |
-  a f a b c a b c |
+  a'( e a b c a b gis) |
+  a( f a b c a b gis) |
+  a( f a b c a b c |
   e4 d c b |
   
   % Part C
-  a2 r4 e8 a |
+  a2) r4 e8( a |
+  b2. c4 |
+  a2) r4 e8( a |
+  b2. e4 |
+  c2) r4 c4( |
+  e,2) r4 e4( |
+  c2) r4 r8 c8( |
+  a1)~ |
+  a1\fermata
 }
 
 lower = \relative c {
   \clef bass
   \key a \minor
   \time 4/4
-  a8 e' a e  a, e' a e |
-  \repeat volta 2 {
+  a8\sustainOn  e' a e  a, e' a <e \hide a,> \sustainOff|
     a, e' a e  a, e' a e |
+  \repeat volta 2 {
     f, c' f c  f, c' f c |
     a8 e' a e  a, e' a e |
     f, c' f c  f, c' f c |
@@ -70,16 +83,21 @@ lower = \relative c {
     e  b' e b  e, b' e b |
   }
   \alternative {
-    { a  e' a e  a, e' a e | }
-    { a, e' a e  a, e' a e | }
+    {
+      a  e' a e  a, e' a e |
+      a, e' a e  a, e' a e |
+    }
+    {
+      a, e' a e  a, e' a e |
+      g, d' g d  g, d' g b |
+    }
   }
-  g, d' g d  g, d' g b |
   
   % Part B
   a, e' a e  a, e' a e |
   f, c' f c  f, c' f c |
-  c, g' c g  c, g' c g |
-  g  d' g d  g, d' g b |
+  c  g' c g  c, g' c g |
+  g, d' g d  g, d' g b |
   
   a, e' a e  a, e' a e |
   f, c' f c  f, c' f c |
@@ -98,17 +116,71 @@ lower = \relative c {
   
   % Part C
   a  e' a e  a, e' a e |
+  
+  a, e' a e  a, e' a e |
   f, c' f c  f, c' f c |
-  a8 e' a e  a, e' a e |
+  a  e' a e  a, e' a e |
   f, c' f c  f, c' f c |
-  c, g' c g  c, g' c g |
-  e  b' e b  e, b' e b |
+  a  e' a e  a, e' a e |
+  f, c' f c  f, c' f c |
+  \ottava #-1
+  a, e' a e  a, e' a e |
+  a, e' a c e2\fermata \ottava #0 \bar "|."
+  
+}
+
+dynamics = \relative {
+  s1 \mp |
+  s2 s2 \cresc |
+  s1 |
+  s1 |
+  s1 |
+  s2\! s2\dim |
+  s1 |
+  s2\! s2\< |
+  s2\> s2\! |
+  
+  s2 s2\< |
+  s1\! |
+  
+  % Part B
+  s1\mp |
+  s1 |
+  s1 |
+  s1 |
+  
+  s1 |
+  s1 |
+  s1 |
+  s1 |
+  
+  s1\mf |
+  s1 |
+  s1 |
+  s1 |
+  
+  s1 |
+  s1 |
+  s1\< |
+  s1\> |
+  
+  s2\! s2\< |
+  s1\! |
+  s1 |
+  s1 |
+  s1\dim |
+  
+  s1 |
+  s1 |
+  s1\! \pp |
+  s1-"rit." |
 }
 
 \score {
   \new PianoStaff \with { instrumentName = "Piano" }
   <<
     \new Staff = "upper" \upper
+    \new Dynamics = "" \dynamics
     \new Staff = "lower" \lower
   >>
   \layout { }
