@@ -97,9 +97,9 @@ lower = \relative c {
   a, e' a e  a, e' a e |
   f, c' f c  f, c' f c |
   c  g' c g  c, g' c g |
-  g, d' g d  g, d' g b |
+  g, d' g d  g, d' g d |
   
-  a, e' a e  a, e' a e |
+  a  e' a e  a, e' a e |
   f, c' f c  f, c' f c |
   c, g' c g  c, g' c g |
   e  b' e b  e, b' e b |
