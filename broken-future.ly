@@ -29,9 +29,11 @@ upper = \relative c' {
   }
   \alternative {
   { a2) r2 |
-    r2 r4 \slurUp e8( a) |
+    r2 r4 \shape #'((0 . 0) (0 . 0) (1 . 0.5) (1 . 1)) Slur e8^( a) |
   }
-  { a2\repeatTie r4. g8( |
+  { 
+    \shape #'((0 . 1.5) (0 . 1) (0 . 1) (0.3 . 0.5)) RepeatTie
+    a2^\repeatTie r4. g8( |
     b2) r2 |
   }
   }
