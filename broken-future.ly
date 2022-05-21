@@ -133,13 +133,13 @@ lower = \relative c {
 
 dynamics = \relative {
   s1 \mp |
-  s2 s2 \cresc |
+  s2 s2 \< |
+  s1\! |
   s1 |
   s1 |
-  s1 |
-  s2\! s2\dim |
-  s1 |
-  s2\! s2\< |
+  s2 s2\> |
+  s1\! |
+  s2  s2\< |
   s2\> s2\! |
   
   s2 s2\< |
@@ -170,11 +170,11 @@ dynamics = \relative {
   s1\! |
   s1 |
   s1 |
-  s1\dim |
+  s4\dim s2.\! |
   
   s1 |
   s1 |
-  s1\! \pp |
+  s1 \pp |
   s1-"rit." |
 }
 
