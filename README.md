@@ -1,8 +1,8 @@
-# Piano score "Broken future"
+# Piano score *Broken Future*
 
-This repo contains music score for piano composition "Broken future".
-The composition was composed in late April and early May 2022 in Aachen, Germany.
-
-![Score preview](assets/preview.png)
+This repo contains music score for the piano composition *Broken future* that
+I wrote sometime in late April and early May 2022 in Aachen, Germany.
 
 The score is typeset using [Lilypond](https://lilypond.org).
+
+![Score preview](assets/preview.png)
