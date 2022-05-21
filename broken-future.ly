@@ -75,7 +75,7 @@ lower = \relative c {
   \clef bass
   \key a \minor
   \time 4/4
-  a8\sustainOn  e' a e  a, e' a <e \hide a,> \sustainOff|
+  a8 e' a e  a, e' a e
     a, e' a e  a, e' a e |
   \repeat volta 2 {
     f, c' f c  f, c' f c |
@@ -178,12 +178,18 @@ dynamics = \relative {
   s1-"rit." |
 }
 
+pedal = \relative {
+  s2 \sustainOn s4. s8\sustainOff |
+  s8 \sustainOn s4.^"simile" s2 |
+}
+
 \score {
   \new PianoStaff \with { instrumentName = "Piano" }
   <<
     \new Staff = "upper" \upper
     \new Dynamics = "" \dynamics
     \new Staff = "lower" \lower
+    \new Dynamics = "" \pedal
   >>
   \layout { }
   \midi { }
