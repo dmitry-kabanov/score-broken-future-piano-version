@@ -3,6 +3,7 @@
 \header {
   title = "Broken Future"
   composer = "Dmitry I. Kabanov"
+  copyright = "© 2022 Dmitry I. Kabanov"
   tagline = \markup {
     Engraved at
     \simple #(strftime "%Y-%m-%d" (localtime (current-time)))
@@ -193,4 +194,10 @@ pedal = \relative {
   >>
   \layout { }
   \midi { }
+}
+\paper {
+  % annotate-spacing = ##t
+  % For some strange reason, adding `bottom-margin` helps to fit the score
+  % to one page. However, the actual `bottom-margin` value is lower :-)
+  bottom-margin = 3
 }
